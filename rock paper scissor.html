@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+    <script src="https://kit.fontawesome.com/9b14647e58.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #292C34;
+            position: relative;
+        }
+
+        header {
+            background: white;
+            padding: 20px;
+        }
+
+        header>h1 {
+            color: #24272E;
+            text-align: center;
+            font-family: 'Asap', sans-serif;
+            font-weight: bold;
+        }
+
+        .score-Board {
+            margin: 20px auto;
+            border: 3px solid white;
+            border-radius: 4px;
+            text-align: center;
+            width: 200px;
+            color: white;
+            font-size: 46px;
+            padding: 15px 20px;
+            font-family: 'Asap', sans-serif;
+            position: relative;
+        }
+
+        .badge {
+            background: #E25840;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            padding: 2px 10px;
+            font-family: 'Asap', sans-serif;
+        }
+
+        #user-label {
+            position: absolute;
+            top: 30px;
+            left: -25px;
+        }
+
+        #computer-label {
+            position: absolute;
+            top: 30px;
+            right: -30px;
+        }
+
+        .result {
+            font-size: 40px;
+            color: white;
+        }
+
+        .result>p {
+            text-align: center;
+            font-weight: bold;
+            font-family: 'Asap', sans-serif;
+        }
+
+        .choices {
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .choice>img {
+            width: 100px;
+        }
+
+        .choice {
+            border: 4px solid white;
+            border-radius: 50%;
+            margin: 0 20px;
+            padding: 10px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .choice:hover {
+            cursor: pointer;
+            background: #1a1b1b;
+        }
+
+        .reset {
+            text-align: center;
+            font-family: 'Asap', sans-serif;
+            font-weight: bold;
+            position: absolute;
+            border: 2px solid white;
+            padding: 10px;
+            margin: 10px 0;
+            right: 100px;
+            bottom: 0;
+            cursor: pointer;
+        }
+
+        .reset:hover {
+            background: #1a1b1b;
+        }
+
+        #action-message {
+            text-align: center;
+            color: white;
+            font-family: 'Asap', sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        #action-message>span {
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .won {
+            border-color: #006847;
+            box-shadow: 0 0 10px #31b43a;
+        }
+
+        .loose {
+            border-color: crimson;
+            box-shadow: 0 0 10px #d01115;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Rock Paper Scissor</h1>
+    </header>
+
+    <div class="score-Board">
+        <div class="badge" id="user-label">User</div>
+        <div class="badge" id="computer-label">Comp</div>
+        <span id="user-score" class="score">0</span>:<span id="computer-score" class="score">0</span>
+    </div>
+    <div class="result">
+        <p> Start! </p>
+    </div>
+    <div class="choices">
+        <div class="choice " id="rock" onclick="sendRock()">
+            <img src="fist.png" alt="">
+
+        </div>
+        <div class="choice" id="paper" onclick="sendPaper()">
+            <img src="hello.png" alt="">
+        </div>
+        <div class="choice" id="scissors" onclick="sendScissor()">
+            <img src="letter-v.png" alt="">
+        </div>
+    </div>
+
+    <p id="action-message"><span id="comp-choice"> </span>
+        <span id="user-choice"> </span>
+    </p>
+
+    <div class="reset" id="reset">
+        <span>Reset Score</span> <i class="fas fa-redo"></i>
+    </div>
+    <script src="rps.js"></script>
+
+</body>
+
+</html>
